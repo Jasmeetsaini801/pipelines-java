@@ -11,6 +11,8 @@ pool:
 
 steps:
 - task: Maven@3
+-Dmaven.wagon.http.pool=false
+
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -21,4 +23,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
--Dmaven.wagon.http.pool=false
